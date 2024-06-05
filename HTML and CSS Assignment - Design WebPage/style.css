@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid red; */
+    justify-content: space-around;
+}
+
+#logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0.5rem;
+}
+
+#logo .logoText {
+    font-size: 2vmax;
+    text-decoration: overline underline;
+    letter-spacing: 4px;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#socials {
+    position: relative;
+    padding: 0 2rem;
+}
+
+#socials ul {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials ul li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: text-decoration 0.5s ease-in-out;
+}
+
+#socials ul li:hover {
+    text-decoration: underline overline;
+}
+
+#socials ul li a {
+    color: #111;
+    text-decoration: none;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%;
+    width: 10vw;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 10vmin;
+}
+
+.sidenav a {
+    padding: 1rem 8px 6px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    font-weight: 650;
+    letter-spacing: 2px;
+    transition: all 0.25s ease-in-out;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidenav a:hover {
+    transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(-2deg) rotateY(15deg) rotateZ(-4deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+    font-weight: 800;
+    text-decoration: wavy;
+}
+
+.main {
+    margin-left: 10vw;
+    padding: 2.5vh 2vw;
+}
+
+#mainEle {
+    margin: 1vh;
+    /* border: 2px solid green; */
+    padding: 2.1vw;
+}
+
+#mainEle .mainBoxes {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10vh 0;
+}
+
+#mainEle .mainBoxes img {
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+
+    border-top: 4px solid;
+    border-left: 4px solid;
+    /* border-image: linear-gradient(to right to left, #000 50%, transparent 50%) 100% 1; */
+}
+
+#mainEle .mainBoxes img:hover {
+    transform: scale(1.05);
+}
+
+#mainEle .mainBoxes:nth-child(odd) {
+    flex-direction: row;
+}
+
+#mainEle .mainBoxes:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#mainEle .mainBoxes:nth-child(even) img {
+    height: 23vmax;
+    width: 32vmax;
+}
+
+#mainEle .mainBoxes:nth-child(odd) img {
+    height: 25vmax;
+    width: 20vmax;
+}
+
+#mainEle .mainBoxes:nth-child(even) .mainHeader {
+    float: right;
+}
+
+#mainEle .mainBoxes:nth-child(even) .mainDesc {
+    float: right;
+    text-align: right;
+}
+
+#mainEle .mainText {
+    margin: 1vh 1.5vw;
+}
+
+#mainEle .mainText .mainHeader {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+}
+
+#mainEle .mainText .mainDesc {
+    padding: 2vh 1vw;
+    font-size: 1.25rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    line-height: 2;
+    font-family: "Nanum Myeongjo", serif;
+    font-style: normal;
+}
+
+/* Footer */
+footer {
+    padding: 2vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #111;
+}
+
+footer p {
+    font-size: 1.2rem;
+    font-family: "Nanum Myeongjo", serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 3px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}

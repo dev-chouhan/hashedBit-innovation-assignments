@@ -1,0 +1,214 @@
+<!-- HTML and CSS - Design One Webpage - Header, Menubar, Sidebar, Main, Footer - Header - left logo and right - 2-3 social link - Menubar - home, about, services, contact - Sidebar (Custom Data) - Content - Three boxes (Title, Image, Description) - Footer - sample text -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>HashedBit Assignment 01</title>
+    <!-- style for cursor -->
+    <style>
+        body {
+            cursor: none;
+        }
+
+        .cursor-dot {
+            width: 10px;
+            ;
+            height: 10px;
+            background-color: #000;
+        }
+
+        .cursor-outline {
+            width: 50px;
+            height: 50px;
+            border: 2px solid hsla(0, 2%, 9%, 0.5);
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 2;
+            pointer-events: none;
+        }
+    </style>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- cursor animation effect -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <!-- cursor animation effect Ends-->
+    <header>
+        <div id="logo">
+            <div class="logoText">
+                HashedBit
+            </div>
+        </div>
+        <div id="socials">
+            <ul>
+                <li><a href="https://www.instagram.com/botdevsayshello/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/devchouhan/" target="_blank">LinkedIN</a></li>
+                <li><a href="https://google.com" target="_blank">Facebook</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div class="sidenav">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SERVICES</a>
+            <a href="#">CONTACT</a>
+        </div>
+
+        <div class="main">
+            <div id="mainEle">
+                <div class="mainBoxes">
+                    <div class="mainImg">
+                        <img src="https://source.unsplash.com/random/900×700/?fruit" alt="Image" srcset="">
+                    </div>
+                    <div class="mainText">
+                        <div class="mainHeader">
+                            <p>Header Is Here</p>
+                        </div>
+                        <div class="mainDesc">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat consequatur nisi id ut
+                                qui dolorem rem optio rerum! Quia, Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Corporis totam recusandae hic ipsum sit rerum at eius similique corrupti tenetur
+                                fuga suscipit rem iusto, dignissimos, error aliquid maiores pariatur. Temporibus fugiat
+                                iusto corrupti sed laboriosam perspiciatis recusandae consequuntur, nihil labore?
+                                officia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainBoxes">
+                    <div class="mainImg">
+                        <img src="https://source.unsplash.com/random/900×700/?cars" alt="Image" srcset="">
+                    </div>
+                    <div class="mainText">
+                        <div class="mainHeader">
+                            <p>Header Is Here</p>
+                        </div>
+                        <div class="mainDesc">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat consequatur nisi id ut
+                                qui dolorem rem optio rerum! Quia, Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Corporis totam recusandae hic ipsum sit rerum at eius similique corrupti tenetur
+                                fuga suscipit rem iusto, dignissimos, error aliquid maiores pariatur. Temporibus fugiat
+                                iusto corrupti sed laboriosam perspiciatis recusandae consequuntur, nihil labore?
+                                officia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainBoxes">
+                    <div class="mainImg">
+                        <img src="https://source.unsplash.com/random/900×700/?people" alt="Image" srcset="">
+                    </div>
+                    <div class="mainText">
+                        <div class="mainHeader">
+                            <p>Header Is Here</p>
+                        </div>
+                        <div class="mainDesc">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat consequatur nisi id ut
+                                qui dolorem rem optio rerum! Quia, Lorem ipsum dolor sit amet consectetur adipisicing
+                                elit. Corporis totam recusandae hic ipsum sit rerum at eius similique corrupti tenetur
+                                fuga suscipit rem iusto, dignissimos, error aliquid maiores pariatur. Temporibus fugiat
+                                iusto corrupti sed laboriosam perspiciatis recusandae consequuntur, nihil labore?
+                                officia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>@Copyright 2024, Developed By <span style="font-weight: 800;">Dev Chouhan</span></p>
+    </footer>
+
+
+    <script>
+        // 2nd cursor
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+    </script>
+</body>
+
+</html>
+
+
+<!-- To Check Afterwards -->
+<!-- <style>
+        /* .circle{
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        } */
+</style> -->
+<!-- <script>
+/* Cursor animation */
+        const coords = {x:0, y: 0};
+        const circles = document.querySelectorAll(".circle");
+        circles.forEach(function(circle){
+            circle.x = 0;
+            circle.y = 0;
+        });
+        window.addEventListener("mousemove", function(e){
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
+        function animateCircles(){
+            let x = coords.x;
+            let y = coords.y;
+            circles.forEach(function(circle, index){
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+            requestAnimationFrame(animateCircles);
+        }
+        animateCircles();
+</script> -->
+<!-- 
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div> -->

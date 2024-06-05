@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css code goes here */
+        thead th {
+            background-color: #00008b;
+            color: #ffffff;
+        }
+
+        td:nth-child(1) {
+            background-color: #f2f2f2;
+        }
+
+        td:nth-child(8) {
+            background-color: #d1d1d1;
+        }
+
+        td {
+            border: solid 1px #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Your task is to create a table for displaying the points of IPL Season 2022.
+The data is provided in this API endpoint: https://my-json-server.typicode.com/FreSauce/json-ipl/data.
+
+Use a script to fetch the data from the given API endpoint. Sort the data fetched in ascending order based on the NRR value of each team. Display the sorted data in the table.
+
+The table should have 8 columns and 11 rows (10 + 1, including the header row).
+Use the thead and tbody to distinguish between the header rows and body rows. And use th for header cells.
+
+The table should also have some CSS formatting.
+The header cells should have a background color of #00008b and text color of #ffffff.
+Inside the table body, the first column cells should have a background color of #f2f2f2.
+Inside the table body, the last column cells should have a background color of #d1d1d1.
+Inside the table body, all the cells td should have solid border of width 1px and color #dddddd
+
+
+This is how it should look -
+
+
+https://d3dyfaf3iutrxo.cloudfront.net/thumbnail/assignment/question/bafab3d0831447f794446aad34184ee7.png
+
+
+ -->
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>IPL SEASON 2022</title>
+    </head>
+
+    <body>
+        <h1 class="title">IPL Season 2022 Points</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Team</th>
+                    <th>Matches</th>
+                    <th>Won</th>
+                    <th>Lost</th>
+                    <th>Tied</th>
+                    <th>NRR</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+                <!-- <tr>
+          <td>1</td>
+          <td>Gujarat Titans</td>
+          <td>14</td>
+          <td>10</td>
+          <td>4</td>
+          <td>0</td>
+          <td>0.316</td>
+          <td>20</td>
+        </tr> -->
+            </tbody>
+        </table>
+    </body>
+
+    <script>
+        fetch("https://my-json-server.typicode.com/FreSauce/json-ipl/data")
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("NETWORK RESPONSE ERROR");
+                }
+            })
+            .then(data => {
+                /* console.log(data); */
+                displayTeam(data)
+            })
+            .catch((error) => console.error("FETCH ERROR:", error));
+
+
+        function displayTeam(data) {
+            var count = 0;
+            data.forEach((d) => {
+                var tbody = document.getElementById("tbody");
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+            <td>${++count}</td>
+            <td>${d.Team}</td>
+            <td>${d.Matches}</td>
+            <td>${d.Won}</td>
+            <td>${d.Lost}</td>
+            <td>${d.Tied}</td>
+            <td>${d.NRR}</td>
+            <td>${d.Points}</td>
+          `;
+                tbody.appendChild(row);
+            })
+        }
+    </script>
+
+    </html>
+
+
+</body>
+
+</html>
